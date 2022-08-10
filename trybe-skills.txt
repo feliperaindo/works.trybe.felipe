@@ -4,3 +4,5 @@ O que eu vou aprender na Trybe:
 - Bash
 - Git
 	- git: meu primeiro commit
+- HTML
+- CSS
