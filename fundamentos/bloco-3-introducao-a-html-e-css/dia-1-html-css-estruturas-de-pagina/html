@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+</head>
+
+<body>
+  <h1>Exercícios</h1>
+  <ul>
+    <li><a href="#Noel">Noel</a></li>
+    <li><a href="#Jessica">Jessica</a></li>
+    <li><a href="#Wesley">Wesley</a></li>
+    <li><a href="#Grilo">Grilo</a></li>
+  </ul>
+  <br><br>
+  <img src="https://img.freepik.com/fotos-gratis/lindo-retrato-de-cachorro_23-2149218452.jpg?w=2000"
+    alt="cachorro de óculos" width="300px">
+  <br><br>
+  <img src="captura.png" alt="printscreen" width="300px">
+
+  <h3>Noel</h3>
+  <p id="Noel">Meu professor. Parece ser uma pessoa bem legal e extrovertida.
+    Gostaria de ter aulas presenciais com ele.</p>
+  <br><br>
+  <h3>Jessica</h3>
+  <p id="Jessica">Conheci hoje. Parece ser uma pessoa bem legal e extrovertida também.
+    Ajudei ela hoje com um problema que ela teve no ubuntu</p>
+  <br><br>
+  <h3>Wesley</h3>
+  <p id="Wesley">Foi a primeira pessoa que fiz um trabalho em grupo. Parece meio preguiçoso.
+    Mas pode ter sido apenas uma má impressão.</p>
+  <br><br>
+  <h3>Grilo</h3>
+  <p id="Grilo">A pessoa mais participativa que já conheci. Não posso nem chamar de puxa saco. Porque ele nem puxa o
+    saco. Ele só gosta muito de interagir, e aparentemente ele já trabalhou em uma área corelata.
+  </p>
+  <br><br>
+  <a href="https://www.google.com" target="blank">Vamos para a página inicial do google</a>
+</body>
+</html>
