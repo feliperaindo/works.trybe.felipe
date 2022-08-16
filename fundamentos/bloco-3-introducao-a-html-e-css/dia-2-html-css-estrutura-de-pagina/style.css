@@ -1,0 +1,47 @@
+h1 {
+    color: orange;
+    font-family: sans-serif;
+  }
+
+  ul {
+    background-color: green;
+  }
+
+  .text-basic {
+    color: blue;
+    font-family: fantasy;
+  }
+
+  p {
+    font-weight: 600;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 3em;
+    font-style: italic;
+  }
+
+  #amarelo-item-1 {
+    color: yellow;
+  }
+
+  #vermelho-item-2 {
+    color: red;
+  }
+
+  #marrom-item-3 {
+    color: brown;
+  }
+
+  #annunce-text {
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .list {
+    text-decoration: underline;
+  }
