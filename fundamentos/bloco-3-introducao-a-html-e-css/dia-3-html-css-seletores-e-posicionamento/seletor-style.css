@@ -1,0 +1,43 @@
+div:hover {
+    border: 3px solid green;
+}
+
+div {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#first {
+    background-color: rgb(110, 182, 245);
+}
+
+#second {
+    background-color: rgb(243, 171, 237);
+    font-weight: 100;
+}
+
+#third {
+    background-color: rgb(252, 244, 132);
+    text-decoration: line-through;
+}
+
+#fourth {
+    background-color: black;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#fifth {
+    background-color: honeydew;
+    text-decoration: underline;
+}
+
+.div-exotic {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+}
+
+.impar {
+    font-style: italic;
+}
