@@ -1,0 +1,64 @@
+ol li {
+    background-color: yellow;
+}
+
+ol li:nth-child(even) {
+    text-transform: uppercase;
+}
+
+ol li:nth-child(odd) {
+    color: green;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: red;
+}
+
+.italic {
+    font-size: 40px;
+    border: 1px solid black;
+}
+
+li {
+    font-size: 20px;
+}
+
+.italic-list {
+    font-weight: 700;
+}
+
+.oneto3 {
+    color: blue;
+}
+
+#java {
+    background-color: pink;
+}
+
+.dev-help:hover {
+    font-weight: bold;
+}
+
+#stack:hover {
+    color: orange;
+}
+
+#w3s:hover {
+    color: green;
+}
+
+#mozilla:hover {
+    color: black;
+}
+
+#devdocs:hover {
+    color: yellow;
+}
+
+#trybe:hover {
+    color: green;
+}
+
+a:hover {
+    color: inherit;
+}
