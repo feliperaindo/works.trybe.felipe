@@ -5,7 +5,7 @@ let sum = 0;
     for (let index = 1; index <= 50; index += 1) {
         sum += index;
     }
-    console.log(sum);
+    console.log('A soma total de 1 a 50 é:', sum);
 
 //2 - Crie um algoritmo que conte quantos números do intervalo entre 2 e 150 são divisíveis por 3.
 // Caso a quantidade seja igual a 50, exiba uma mensagem secreta.
@@ -16,7 +16,12 @@ let divisiveisPorTres = 0;
             divisiveisPorTres += 1; 
         }      
     }
-    console.log(divisiveisPorTres);
+    if (divisiveisPorTres === 50) {
+        console.log("Mensagem secreta.")
+    } else {
+        console.log(divisiveisPorTres);
+    }
+    
 
 // 3 - Crie um algoritmo que simula o jogo "pedra, papel e tesoura" levando em consideração que são apenas duas pessoas
 // jogando e imprima o resultado no formato: "Player 1 won" ou "A Ties" ou "Player 2 won".
