@@ -8,6 +8,7 @@ function areaAndPerimeter (base, height) {
     }
     return calc;
 }
+console.log(areaAndPerimeter(3, 5));
   
   //Exercício 2 - Crie uma função que, dado um array de números inteiros, 
   //retorne a quantidade de números pares e ímpares no formato:
@@ -19,21 +20,23 @@ function quantityOddANdEvenNumbers (array) {
     for (let index = 0; index < array.length; index += 1) {
       if (array[index] % 2 === 0){
         numbers.evens += 1;
+      } else {
+        numbers.odds += 1;
       }
-      numbers.odds += 1;
     }
     return numbers;
 }
+console.log(quantityOddANdEvenNumbers([2, 7, 15, 3, 4, 8, 30, 45]))
   //Exercício 3 - Crie uma função que receba uma string word e outra string ending.
   //Verifique se a string ending é o final da string word. 
   //Considere que a string ending sempre será menor que a string word.
   //Dica: Use o split.
 function receiveStrings (word, ending) {
   let verify = "";
-  for (let c of word) {
-    for (let i of ending) {
+  for (let c in word) {
+    for (let i in ending) {
       if (word[c] === ending[i]) {
-        verify += ending[index];
+        verify += ending[i];
       }
     }
   }
@@ -42,6 +45,8 @@ function receiveStrings (word, ending) {
   }
   return "A menor string não corresponde ao final da maior string."
 }
+console.log(receiveStrings('joaofernando', 'fernan'));
+console.log(receiveStrings('trybe', 'be'));
   
   
   // valor de teste: ‘trybe’ e ‘be’
