@@ -56,8 +56,8 @@ console.log(receiveStrings('trybe', 'be'));
   //verificaFimPalavra(‘joaofernando’, ‘fernan’);  
   //  Retorno esperado: false;
 
-Academia-de-logica (função não operativa)(proposta de correção).
-Resposta = faltou a atribuição dos valores as variáveis 'numberPares' e 'numberImpar'.
+// Academia-de-logica (função não operativa)(proposta de correção).
+// Resposta = faltou a atribuição dos valores as variáveis 'numberPares' e 'numberImpar'.
 
 function countEvenAndOdd (arrayInteiro) {
 
