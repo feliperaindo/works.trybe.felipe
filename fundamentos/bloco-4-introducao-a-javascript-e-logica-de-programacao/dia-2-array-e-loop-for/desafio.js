@@ -20,7 +20,7 @@ let randomNumber = 0;
     console.log(numerosMega);
 
     //Verificador de apostas.
-let aposta = [12, 35, 27, 15, 8, 2, 60, 59, 54, 7, 1, 33];
+let aposta = [23, 43, 60, 7, 12, 24];
 let acertos = 0;
 let numerosAcertados = [];
 
