@@ -20,20 +20,32 @@ getSon.innerText = 'texto do filho';
 let getText = document.getElementById('pai').lastElementChild.previousElementSibling;
 
 //Exercício segunda parte.
-let element = document.getElementById('pai');
+// let element = document.getElementById('pai');
 
-let createElement = document.createElement('section');
+// let createElement = document.createElement('section');
 
-createElement.innerText = 'novo elemento';
+// createElement.innerText = 'novo elemento';
 
-element.appendChild(createElement);
+// element.appendChild(createElement);
 
-let elementoTwo = document.getElementById('elementoOndeVoceEsta');
+// let elementoTwo = document.getElementById('elementoOndeVoceEsta');
 
-let createDiv = document.createElement('div');
+// let createDiv = document.createElement('div');
 
-createDiv.innerHTML = 'mais um <strong>elemento</strong> no meu html';
+// createDiv.innerHTML = 'mais um <strong>elemento</strong> no meu html';
 
-elementoTwo.appendChild(createDiv);
+// elementoTwo.appendChild(createDiv);
 
-getSon.appendChild(createDiv);
+// getSon.appendChild(createDiv);
+
+function removeElements() {
+    let filhos = [document.getElementById('terceiroFilho'), document.getElementById('quartoEUltimoFilho'), document.getElementById('primeiroFilho'), document.getElementById('segundoEUltimoFilhoDoFilho')]
+    let pai = document.getElementById('paiDoPai');
+
+    pai.firstElementChild.removeChild(filhos[0]);
+    pai.firstElementChild.removeChild(filhos[1]);
+    pai.firstElementChild.firstElementChild.removeChild(filhos[2]);
+    pai.firstElementChild.firstElementChild.removeChild(filhos[3]);
+
+}
+removeElements();
