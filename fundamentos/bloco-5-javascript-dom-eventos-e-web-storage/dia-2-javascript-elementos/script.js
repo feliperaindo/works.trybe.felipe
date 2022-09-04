@@ -1,3 +1,4 @@
+//Exercicio primeira parte.
 let getElement = document.getElementById('elementoOndeVoceEsta').parentElement;
 getElement.style.color = 'red';
 
@@ -17,4 +18,22 @@ getSon.innerText = 'texto do filho';
 // console.log(getText);
 
 let getText = document.getElementById('pai').lastElementChild.previousElementSibling;
-console.log(getText);
+
+//Exercício segunda parte.
+let element = document.getElementById('pai');
+
+let createElement = document.createElement('section');
+
+createElement.innerText = 'novo elemento';
+
+element.appendChild(createElement);
+
+let elementoTwo = document.getElementById('elementoOndeVoceEsta');
+
+let createDiv = document.createElement('div');
+
+createDiv.innerHTML = 'mais um <strong>elemento</strong> no meu html';
+
+elementoTwo.appendChild(createDiv);
+
+getSon.appendChild(createDiv);
