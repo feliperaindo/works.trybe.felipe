@@ -83,14 +83,53 @@ function addList() {
 addList();
 
 //Passo 9 - 🚀 Adicione 3 tags h3, todas sendo filhas do main criado no passo 2.
+//Passo 11 - 🚀 Adicione a classe description nas 3 tags h3 criadas;
 function addTags() {
     let getElement = document.getElementsByTagName('main');
 
     for (let index = 0; index < 3; index++) {
         let createH3 = document.createElement('h3');
+        createH3.className = 'description'
         getElement[0].appendChild(createH3);
     }
 }
 addTags();
 
+//Passo 10 - 🚀 Adicione a classe title na tag h1 criada;
+let addClass = document.getElementsByTagName('h1');
+addClass[0].className = 'title';
+
+//Passo 12 - 🚀 Remova a section criado no passo 5 (aquele que possui a classe left-content).
+//Utilize a função .removeChild();
+function removeSection() {
+    let getElement = document.getElementsByClassName('main-content');
+    let elementToRemove = document.querySelector('.left-content');
+    getElement[0].removeChild(elementToRemove);
+}
+removeSection();
+
+//Passo 13 - 🚀 Centralize a section criado no passo 6 (aquele que possui a classe right-content).
+//Dica: para centralizar, basta configurar o margin-right: auto da section;
+function centralize() {
+    let getElement = document.querySelector('.right-content');
+    getElement.style.marginRight = 'auto'
+}
+centralize();
+
+//Passo 14 - 🚀 Troque a cor de fundo do elemento pai da section criada no passo 3
+// (aquela que possui a classe center-content) para a cor verde;
+function changeBackgroundColor() {
+    let getElement = document.querySelector('.center-content').parentNode;
+    getElement.style.cssText = 'background-color:orange';
+}
+changeBackgroundColor();
+
+//Passo 15 - 🚀 Remova os dois últimos elementos (nove e dez) da lista criada no passo 8.
+function removeItensList() {
+    let getElement = document.querySelector('ul');
+    let deletElement = document.querySelectorAll('ul li');
+    getElement.removeChild(deletElement[deletElement.length-1]);
+    getElement.removeChild(deletElement[deletElement.length-2]);
+}
+removeItensList();
 
