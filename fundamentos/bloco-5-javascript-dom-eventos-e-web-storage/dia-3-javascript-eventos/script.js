@@ -1,33 +1,115 @@
 const decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 
-  19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-  const getElement = document.getElementById('days');
+19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+const weekDaysList = document.querySelector('.week-days');
+const getElement = document.getElementById('days');
+const getDiv = document.querySelector('.buttons-container');
+var color = true;
 
-function createDaysOfTheWeek() {
-    const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
-    const weekDaysList = document.querySelector('.week-days');
-  
-    for (let index = 0; index < weekDays.length; index += 1) {
-      const days = weekDays[index];
-      const dayListItem = document.createElement('li');
-      dayListItem.innerHTML = days;
-  
-      weekDaysList.appendChild(dayListItem);
+function createElement(string) {
+  const elementToCreate = document.createElement(string);
+  return elementToCreate;
+}
+
+function createDaysOfTheWeek(array) {
+    for (const i of array) {
+      const days = createElement('li');
+      days.innerHTML = i;
+      weekDaysList.appendChild(days);
     };
   };
 
-  function createDays(array) {
-    for (let index = 0; index < array.length; index++) {
-      const createElement = document.createElement('li');;
-      createElement.classList.add('day');
-      createElement.innerText = array[index];
-      if (array[index] === 24 || array[index] === 25 || array[index] === 31) {
-        createElement.classList.add('day-holiday')
-      }
-      getElement.appendChild(createElement);
+  function verifyHoliday(element, number) {
+    if (number === 24 || number === 25 || number === 31) {
+      element.classList.add('holiday')
     }
   }
-  
-  createDaysOfTheWeek();
+
+  function verifyFryday(element, number) {
+    if (number === 4 || number === 11 || number === 18 || number === 25) {
+      element.classList.add('friday')
+    }
+  }
+
+  function createDays(array) {
+    for (const i of array) {
+      const element = createElement('li');
+      element.classList.add('day');
+      element.innerText = i;
+      getElement.appendChild(element);
+      verifyHoliday(element, i);
+      verifyFryday(element, i);
+    }
+  }
+
+  function buttonHoliday(string) {
+    const button = createElement('button');
+    button.setAttribute('id', 'btn-holiday');
+    button.type = 'button';
+    button.innerText = string;
+    getDiv.appendChild(button);
+  }
+
+  function changeColorHoliday(color) {
+    const getHolidays = document.querySelectorAll('.holiday');
+    for (const i of getHolidays) {
+      i.style.backgroundColor = color;
+      }
+  }
+
+  function verifyColorToChange() {
+    if (color === true) {
+      changeColorHoliday('rgb(50, 50, 50)')
+      color = false;
+      return;
+    } changeColorHoliday('rgb(238,238,238)');
+    color = true;
+  }
+
+  function fridayButton(string) {
+    const fridayButton = createElement('button');
+    fridayButton.type = 'button';
+    fridayButton.setAttribute('id', 'btn-friday');
+    fridayButton.innerText = string;;
+    getDiv.appendChild(fridayButton);
+  }
+
+  function changeFridayValue(getAllFridayDays, array) {
+    for (let index = 0; index < getAllFridayDays.length; index += 1) {
+      getAllFridayDays[index].innerText = array[index]
+    }
+  }
+
+  function getFridayDays() {
+    const getAllFridayDays = document.querySelectorAll('.friday');
+    if (getAllFridayDays[0].innerText === 'sexta-feira') {
+      changeFridayValue(getAllFridayDays, [4, 11, 18, 25]);
+    } else {
+      changeFridayValue(getAllFridayDays, ['sexta-feira', 'sexta-feira', 'sexta-feira', 'sexta-feira'])
+    }
+  }
+
+  function zoomInDay(element) {
+    const day = element.target;
+    day.style.zoom = '200%';
+  }
+
+  function zoomOutDay(element) {
+    const day = element.target;
+    day.style.removeProperty('zoom');
+  }
+
+  createDaysOfTheWeek(weekDays);
   createDays(decemberDaysList);
-  
-  // Escreva seu código abaixo.
+  buttonHoliday('Feriados');
+  fridayButton('Sexta-Feira');
+
+  const getButtonHoliday = document.getElementById('btn-holiday');
+  const getButtonFriday = document.getElementById('btn-friday');
+  const getDays = document.querySelectorAll('.day');
+
+  getDays.forEach(day => {day.addEventListener('mouseover', zoomInDay)});
+  getDays.forEach(day => {day.addEventListener('mouseleave', zoomOutDay)});
+
+  getButtonHoliday.addEventListener('click', verifyColorToChange);
+  getButtonFriday.addEventListener('click', getFridayDays);
