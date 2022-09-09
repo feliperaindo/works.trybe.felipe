@@ -4,7 +4,7 @@ const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', '
 const weekDaysList = document.querySelector('.week-days');
 const getElement = document.getElementById('days');
 const getDiv = document.querySelector('.buttons-container');
-const getDivTaks = document.querySelector('.my-tasks');
+const getDivTasks = document.querySelector('.my-tasks');
 var color = true;
 
 function createElement(string) {
@@ -106,7 +106,7 @@ function createDaysOfTheWeek(array) {
       const myTask = createElement('span');
       myTask.classList.add('my-tasks');
       myTask.innerText = getTaskValue.value;
-      getDivTaks.appendChild(myTask);
+      getDivTasks.appendChild(myTask);
     } else {
       alert('tarefa não informada.')
     }
