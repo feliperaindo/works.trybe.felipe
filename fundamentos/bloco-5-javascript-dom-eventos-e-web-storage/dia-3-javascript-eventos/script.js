@@ -4,6 +4,7 @@ const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', '
 const weekDaysList = document.querySelector('.week-days');
 const getElement = document.getElementById('days');
 const getDiv = document.querySelector('.buttons-container');
+const getDivTaks = document.querySelector('.my-tasks');
 var color = true;
 
 function createElement(string) {
@@ -99,6 +100,18 @@ function createDaysOfTheWeek(array) {
     day.style.removeProperty('zoom');
   }
 
+  function createATask() {
+    const getTaskValue = document.getElementById('task-input-tarefa');
+    if (getTaskValue.value !== '') {
+      const myTask = createElement('span');
+      myTask.classList.add('my-tasks');
+      myTask.innerText = getTaskValue.value;
+      getDivTaks.appendChild(myTask);
+    } else {
+      alert('tarefa não informada.')
+    }
+  }
+
   createDaysOfTheWeek(weekDays);
   createDays(decemberDaysList);
   buttonHoliday('Feriados');
@@ -107,9 +120,11 @@ function createDaysOfTheWeek(array) {
   const getButtonHoliday = document.getElementById('btn-holiday');
   const getButtonFriday = document.getElementById('btn-friday');
   const getDays = document.querySelectorAll('.day');
+  const getAddButtonTask = document.querySelector('#btn-add-tarefa');
 
   getDays.forEach(day => {day.addEventListener('mouseover', zoomInDay)});
   getDays.forEach(day => {day.addEventListener('mouseleave', zoomOutDay)});
 
   getButtonHoliday.addEventListener('click', verifyColorToChange);
   getButtonFriday.addEventListener('click', getFridayDays);
+  getAddButtonTask.addEventListener('click', createATask)
