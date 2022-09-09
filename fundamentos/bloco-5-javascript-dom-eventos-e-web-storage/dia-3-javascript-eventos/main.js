@@ -30,7 +30,7 @@ function clickForLi(elemento) {
 // com a classe 'tech';
 function changeText(keypress) {
     const getTech = document.querySelector('.tech');
-    if (keypress.key === 'Enter') {
+    if (keypress.key === 'Enter' && input.value !== '') {
         getTech.innerText = input.value;   
     }
 }
