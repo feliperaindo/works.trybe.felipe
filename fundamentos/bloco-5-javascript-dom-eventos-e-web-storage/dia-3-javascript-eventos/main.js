@@ -29,6 +29,7 @@ function clickForLi(elemento) {
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
 function changeText(keypress) {
+    const getTech = document.querySelector('.tech');
     if (keypress.key === 'Enter') {
         getTech.innerText = input.value;   
     }
