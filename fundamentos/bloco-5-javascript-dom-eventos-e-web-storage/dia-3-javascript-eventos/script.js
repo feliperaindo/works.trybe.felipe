@@ -21,7 +21,7 @@ function createDaysOfTheWeek() {
       createElement.classList.add('day');
       createElement.innerText = array[index];
       if (array[index] === 24 || array[index] === 25 || array[index] === 31) {
-        createElement.classList.add('day holiday')
+        createElement.classList.add('day-holiday')
       }
       getElement.appendChild(createElement);
     }
