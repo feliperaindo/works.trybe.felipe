@@ -163,6 +163,12 @@ function createDaysOfTheWeek(array) {
     }
   }
 
+  function verifyKey(keydown) {
+    if (keydown.key === 'Enter') {
+      createATask();
+    }
+  }
+
   createDaysOfTheWeek(weekDays);
   createDays(decemberDaysList);
   buttonHoliday('Feriados');
@@ -172,6 +178,7 @@ function createDaysOfTheWeek(array) {
   const getButtonFriday = document.getElementById('btn-friday');
   const getDays = document.querySelectorAll('.day');
   const getAddButtonTask = document.querySelector('#btn-add');
+  const getTaskValue = document.getElementById('task-input');
   
   getDays.forEach(day => {day.addEventListener('mouseover', zoomInDay)});
   getDays.forEach(day => {day.addEventListener('mouseleave', zoomOutDay)});
@@ -179,4 +186,5 @@ function createDaysOfTheWeek(array) {
 
   getButtonHoliday.addEventListener('click', verifyColorToChange);
   getButtonFriday.addEventListener('click', getFridayDays);
-  getAddButtonTask.addEventListener('click', createATask)
+  getAddButtonTask.addEventListener('click', createATask);
+  getTaskValue.addEventListener('keydown', verifyKey);
