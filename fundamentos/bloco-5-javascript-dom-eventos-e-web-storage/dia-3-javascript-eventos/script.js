@@ -100,15 +100,66 @@ function createDaysOfTheWeek(array) {
     day.style.removeProperty('zoom');
   }
 
+  function randomColor() {
+    const randomCor = Math.floor(Math.random() * 255);
+    return randomCor;
+  }
+
+  function colorTask() {
+    let numberOne = randomColor();
+    let numberTwo = randomColor();
+    let numberThree = randomColor();
+    let color = 'rgb(' + numberOne + ', ' + numberTwo + ', ' + numberThree + ')';
+    return color;
+  }
+
+  function taskSelected(tarefa) {
+    const getTasks = document.querySelectorAll('.task');
+    const tarefaClicada = tarefa.target;
+
+    if (tarefaClicada.classList.contains('selected')) {
+      tarefaClicada.classList.remove('selected');
+    } else {
+      for (const i of getTasks) {
+        i.classList.remove('selected');
+      }
+      tarefaClicada.classList.add('selected');
+    }
+  }
+
   function createATask() {
-    const getTaskValue = document.getElementById('task-input-tarefa');
+    const getTaskValue = document.getElementById('task-input');
+
     if (getTaskValue.value !== '') {
+      const taskColor = colorTask();
+      const taskCreator = createElement('div');
       const myTask = createElement('span');
+
+      taskCreator.classList.add('task');
       myTask.classList.add('my-tasks');
+
+      taskCreator.style.backgroundColor = taskColor;
       myTask.innerText = getTaskValue.value;
+
+      getDivTasks.appendChild(taskCreator);
       getDivTasks.appendChild(myTask);
+
+      const getTasks = document.querySelectorAll('.task');
+      getTasks.forEach(task => {task.addEventListener('click', taskSelected)});
     } else {
       alert('tarefa não informada.')
+    }
+  }
+
+  function colorDay(click) {
+    const dayCliked = click.target;
+    const colorDay = window.getComputedStyle(dayCliked).color;
+    const gettaskColor = document.querySelector('.selected');
+
+    if (colorDay !== 'rgb(119,119,119)' && gettaskColor === null) {
+      dayCliked.style.color = 'rgb(119,119,119)';
+    } else {
+      dayCliked.style.color = gettaskColor.style.backgroundColor;
     }
   }
 
@@ -120,10 +171,11 @@ function createDaysOfTheWeek(array) {
   const getButtonHoliday = document.getElementById('btn-holiday');
   const getButtonFriday = document.getElementById('btn-friday');
   const getDays = document.querySelectorAll('.day');
-  const getAddButtonTask = document.querySelector('#btn-add-tarefa');
-
+  const getAddButtonTask = document.querySelector('#btn-add');
+  
   getDays.forEach(day => {day.addEventListener('mouseover', zoomInDay)});
   getDays.forEach(day => {day.addEventListener('mouseleave', zoomOutDay)});
+  getDays.forEach(day => {day.addEventListener('click', colorDay)});
 
   getButtonHoliday.addEventListener('click', verifyColorToChange);
   getButtonFriday.addEventListener('click', getFridayDays);
