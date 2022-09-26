@@ -71,12 +71,20 @@ const people = [
   { name: 'Bruna', age: 19 },
 ];
 
-const ordem = people.sort((a, b) => a.age - b.age);
+// const ordem = people.sort((a, b) => a.age - b.age);
 
-console.log(people);
+// console.log(people);
 
 // Modifique o sort do exercício anterior para que ordene o array pela idade das pessoas em ordem decrescente.
 
-const ordem2 = people.sort((a, b) => b.age - a.age);
+const ordem2 = people.sort((a, b) => {
+  if (b.name > a.name) {
+    return 1;
+  }
+  if (b.name < a.name) {
+    return -1;
+  }
+  return 0;
+});
 
-console.log(people);
+console.log(ordem2);
